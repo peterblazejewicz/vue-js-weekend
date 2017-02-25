@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome to Vue</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      <header class="card-header card-inverse card-primary">{{title}}</header>
+      <div class="card-block">
+        <form class="form d-flex" @submit.prevent="addDino">
+          <input class="form-control form-control-sm" type="text" placeholder="Add dinosaur" @keypress.enter="addDino" v-model="input">
+          <button class="btn btn-outline-success btn-sm ml-2" type="submit">Add</button>
+        </form>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-start" v-for="(dino, index) in dinos">
+          <button class="btn btn-outline-primary btn-sm" @click="dino.quantity -= 1">
+            <i class="fa fa-minus" aria-hidden="true"><span class="sr-only">Remove</span></i>
+          </button>
+          <span class="ml-1 mr-1">{{dino.quantity}}</span>
+          <button class="btn btn-outline-primary btn-sm" @click="dino.quantity += 1">
+            <i class="fa fa-plus" aria-hidden="true"></i><span class="sr-only">Add</span>
+          </button>
+          <span class="ml-1 mr-auto">{{dino.text}}</span>
+          <button class="btn btn-outline-danger btn-sm ml-1" @click="removeDino(index)">Extinct</button>
+        </li>
+      </ul>
+      <div class="card-block">
+        <p class="card-text">Total Dinosaurs: {{totalDinosaurs}}<span class="float-right font-italic text-danger">Updated: {{ dinosUpdated }}</span></p>
+        <p class="card-text">Total Species: {{totalSpecies}}<span class="float-right font-italic text-danger">Updated: {{ speciesUpdated }}</span></p>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
