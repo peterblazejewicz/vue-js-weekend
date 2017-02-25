@@ -18,6 +18,13 @@ new Vue({
       }
     ]
   },
+  directives: {
+    focus: {
+      inserted: function(el) {
+        el.focus();
+      }
+    }
+  },
   methods: {
     addDino: function (event) {
       if (!this.input)
