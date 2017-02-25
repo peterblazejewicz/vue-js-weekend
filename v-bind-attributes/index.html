@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome to Vue</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      <header class="card-header card-inverse card-primary">{{title}}</header>
+      <div class="card-block">
+        <button id="tour-button"
+          type="button"
+          class="btn btn-primary btn--centered"
+          :class="[sizeToggle ? 'btn-lg' : '', outline ? 'btn-outline-primary' : '', block ? 'btn-block' : '']"
+          :style="styles"
+          :disabled="disabled">Start Tour</button>
+      </div>
+      <div class="card-block">
+        <form>
+          <fieldset>
+            <legend>Options</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" v-model="sizeToggle">
+                Large
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" v-model="outline">
+                Outline
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" v-model="block">
+                Block
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" v-model="disabled">
+                Disabled
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="font-color-input">Font Color</label>
+              <input id="font-color-input" class="form-control" type="color" v-model="fontColor">
+            </div>
+            <div class="form-group">
+              <label for="background-color-input">Background Color</label>
+              <input id="background-color-input" class="form-control" type="color" v-model="backgroundColor">
+            </div>
+            <div class="form-group">
+              <label for="range-input">Range</label>
+              <input id="range-input" class="form-control" type="range" v-model="range">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+body {
+  padding: 2rem 0;
+}
+
+.card {
+  max-width: 350px;
+}
+.btn--centered {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
