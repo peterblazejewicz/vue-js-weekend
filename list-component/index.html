@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome to Vue</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card card-inverse card-primary" id="card">
+      <header class="card-header">{{title}}</header>
+      <div class="card-block">
+        <div class="input-group">
+          <input id="add-dinousaur" type="text" class="form-control" placeholder="Add dinousaur" @keypress.enter="addItem">
+          <span class="input-group-btn">
+            <button class="btn btn-outline-primary" type="submit" @click="addItem">Go!</button>
+          </span>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" v-for="(item, index) in items">
+          <button class="btn btn-outline-primary btn-sm" type="button" @click="deleteItem(index)">X</button> {{item.text}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

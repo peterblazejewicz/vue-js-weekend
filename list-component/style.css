@@ -1,0 +1,22 @@
+body {
+  padding: 2rem 0;
+}
+.list-group-item {
+  color: #fff;
+  background-color: transparent;
+}
+.list-group-item button {
+  margin-right: 0.5rem;
+}
+.btn-outline-primary {
+  color: #fff;
+  color:rgba(255,255,255,.75);
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, .5);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 1.0);
+}
