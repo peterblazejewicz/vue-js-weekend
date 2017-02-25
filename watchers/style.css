@@ -1,0 +1,11 @@
+body {
+  padding: 2rem 0;
+}
+
+.card {
+  max-width: 400px;
+}
+
+button[type=submit] {
+  min-width: 5em;
+}
