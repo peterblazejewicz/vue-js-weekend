@@ -1,0 +1,9 @@
+body {
+  padding: 2rem 0;
+}
+
+.card a {
+  font-size: 75%;
+  word-wrap: break-word;
+  line-height: 100%;
+}
