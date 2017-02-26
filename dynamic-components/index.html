@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome to Vue</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      <header class="card-header card-inverse card-primary d-flex align-items-center">
+        {{title}}
+        <button type="button" class="btn btn-link btn-xs align-self-end ml-auto" @click="toggle">{{editLabel}}</button>
+      </header>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" v-for="dino in dinos">
+          <keep-alive>
+            <component :is="currentView" :initial-quantity="dino.quantity" :name="dino.text" :diet="dino.diet"></component>
+          </keep-alive>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/x-template" id="dino-edit">
+    <div class="d-flex align-content-center flex-wrap">
+      <button class="btn btn-outline-primary btn-sm mr-2" @click="increment">{{ quantity }}</button> {{ name }}
+    </div>
+  </script>
+  <script type="text/x-template" id="dino-show">
+    <p class="card-text"><strong>{{ name }}</strong> | {{ diet }}</p>
+  </script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

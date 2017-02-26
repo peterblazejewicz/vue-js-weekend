@@ -1,0 +1,12 @@
+body {
+  padding: 2rem 0;
+}
+.card {
+  max-width: 350px;
+}
+.card-header .btn {
+  color: rgba(255,255,255,.75);
+}
+.card-header .btn:hover {
+  color: rgba(255,255,255,1);
+}
