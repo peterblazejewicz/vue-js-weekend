@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome to Vue</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" id="app">
+      <header class="card-header card-inverse card-primary">{{title}}</header>
+      <form>
+        <div class="card-block">
+          <fieldset class="form-group">
+            <legend>Check Boxes</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input form-control-sm" type="checkbox" v-model="checked">
+                This box is {{ checked ? 'checked' : 'unchecked' }}
+              </label>
+            </div>
+          </fieldset>
+          <hr>
+          <fieldset class="form-group">
+            <legend>Radio Buttons</legend>
+            <template v-for="dino in dinos">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input form-control-sm" type="radio" :value="dino" v-model="chosenDino">
+                  {{ dino }}
+                </label>
+              </div>
+            </template>
+            <small class="form-text text-muted">Favorite: {{ chosenDino }}</small>
+          </fieldset>
+          <hr>
+          <fieldset class="form-group">
+            <legend>Multi Select</legend>
+            <div class="form-group">
+              <label class="sr-only" for="multi-select">Example multiple select</label>
+              <select id="multi-select" class="form-control form-control-sm" v-model="selected" multiple>
+              <option v-for="period in periods" :value="period.value">
+                {{ period.name }}
+              </option>
+            </select>
+            </div>
+            <small class="form-text text-muted">Selected IDs: {{ selected }}</small>
+          </fieldset>
+          <hr>
+          <fieldset class="form-group">
+            <legend>Text Input</legend>
+            <label for="select-input" class="form-check-label sr-only">Enter single text</label>
+            <input id="select-input" class="form-control form-control-sm" type="text" v-model="single" placeholder="Add text">
+            <small class="form-text text-muted">Single: {{ single }}</small>
+          </fieldset>
+          <hr>
+          <fieldset class="form-group">
+            <legend>Multiline Input</legend>
+            <label for="multiline-input" class="form-check-label sr-only">Enter multiline text</label>
+            <textarea id="multiline-input" class="form-control form-control-sm" v-model="message" placeholder="Add multiple lines text"></textarea>
+            <small class="form-text text-muted" style="white-space: pre;">Message: {{ message }}</small>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
